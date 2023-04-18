@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
     _id:mongoose.Schema.Types.ObjectId,
-    first_name:{
+    firstName:{
         type: String,
         required: true
     },
-    last_name:{
+    lastName:{
         type: String,
         required: true
     },
@@ -14,7 +14,7 @@ const userSchema = mongoose.Schema({
         type: String,
     required: true,
     unique: true,
-    match: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    match:  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     },
     password:{
         type: String,

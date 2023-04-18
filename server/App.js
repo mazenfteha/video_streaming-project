@@ -2,6 +2,7 @@ const express = require('express')
 const app =express();
 
 const signup = require('./routes/signUp')
+const signin = require('./routes/signin')
 
 const morgan =require('morgan')
 const cors =require('cors')
@@ -19,5 +20,6 @@ app.use(bodyParser.json())
 
 //Routes
 app.use('/api/signup',signup);
+app.use('/api/signin', signin);
 
 module.exports = app;
